@@ -1,32 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <Header/>
+    <h1>{{title}}</h1>
+    <Content/>
+    <Footer  title="Copyright 2020 by Thanaphon Thanusan Computer Engineering,CMU Tel:082-039-1362"/>
+    <Clock>
+      <span style="color:green;">current time</span>
+    </Clock>
+    
   </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+<script>
+import Header from "../src/components/layout/Header.vue"
+import Footer from "../src/components/layout/Footer.vue"
+import Content from "../src/components/layout/Content.vue"
+import Clock from "../src/components/layout/Clock.vue"
+export default {
+  name: 'app',
+  data() {
+    return {
+      title:'Portfolio',
+      
+    }
+  },
+  components:{
+    Header,
+    Footer,
+    Content,
+    Clock,
+  }
 }
+</script>
 
-#nav {
-  padding: 30px;
-}
+<style scpoed>
+  
+  
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+  
 </style>
